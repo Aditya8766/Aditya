@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+    <style>
+      *{
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        margin:5px;
+        padding: 1px;
+      }
+      .p{
+          float: right;
+          margin-top: -22%;
+      }
+    </style>    
+</head>
+<body>
+    <h1>JavaScript Arrays</h1>
+<h2>The filter() Method</h2>
+<h2>The push() Method</h2>
+<h2>The pop() Method</h2>
+<h2>The reduce() Method</h2>
+<h2>The for each() Method</h2>
+<h2>The sort() Method</h2>
+<h2>The map() Method</h2>
+<h2>The concat() Method</h2>
+
+<div class="p">
+<p id="demo"></p>
+<p id="demo1"></p>
+<p id="demo2"></p>
+<p id="demo3"></p>
+<p id="demo4"></p>
+<p id="demo5"></p>
+<p id="demo6"></p>
+<p id="demo7"></p>
+</div>
+<script>
+  //filter
+const ages = [32, 33, 16, 14];
+
+document.getElementById("demo").innerHTML = ages.filter(checkAdult);
+
+function checkAdult(age) {
+  return age >= 18;
+}
+
+//push
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.push("Lemon", "Pineapple");
+
+document.getElementById("demo1").innerHTML = fruits;
+
+//pop
+const fruits1 = ["Banana", "Orange", "Apple", "Mango"];
+fruits.pop();
+document.getElementById("demo2").innerHTML = fruits1;
+
+//reduce
+const numbers = [175, 50, 200];
+document.getElementById("demo3").innerHTML = numbers.reduce(myFunc);
+
+function myFunc(total, num) {
+  return total - num;
+}
+
+//for each
+let text = "";
+const fruits2 = ["apple", "orange", "mango"];
+fruits2.forEach(myFunction);
+
+document.getElementById("demo4").innerHTML = text;
+ 
+function myFunction(item, index) {
+  text += index + ": " + item + "<br>"; 
+}
+
+//sort reverse
+const fruits3 = ["Banana", "Orange", "Apple", "Mango"];
+fruits3.sort();
+fruits3.reverse();
+document.getElementById("demo5").innerHTML = fruits3;
+
+//map
+const numbers1 = [25, 81, 64, 4, 9];
+document.getElementById("demo6").innerHTML = numbers1.map(Math.sqrt);
+
+//concat
+const arr1 = ["Aditya", "Abishek"];
+const arr2 = ["Roshan", "Yogesh", "Shailesh"];
+
+const children = arr1.concat(arr2); 
+document.getElementById("demo7").innerHTML = children;
+</script>
+</body>
+</html>
